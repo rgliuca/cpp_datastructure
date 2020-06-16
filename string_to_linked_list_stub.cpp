@@ -51,9 +51,7 @@ void List::append(char c) {
 int main(int argc, char* argv[]) {
     List l;
     if (argc==2) {
-        //cout<<argv[1]<<endl;
         for (int i=0; i<strlen(argv[1]); i++) {
-            //cout<<argv[1][i]<<endl;
             l.append(argv[1][i]);
         }
         cout<<"After append:"<<endl;
@@ -67,7 +65,26 @@ int main(int argc, char* argv[]) {
         l.rotate_right(4);
         cout<<"Rotate right by 4 chars:"<<endl;
         l.print();
+        cout<<"Remove pos: 0"<<endl;
+        l.remove(0);
+        l.print();
+        cout<<"Remove pos: 5"<<endl;
+        l.remove(5);
+        l.print();
+        cout<<"Remove pos: 7"<<endl;
+        l.remove(7);
+        l.print();
+        cout<<"Insert pos: 0"<<endl;
+        l.insert('X',0);
+        l.print(); 
+        cout<<"Insert pos: 5"<<endl;
+        l.insert('Y',5);
+        l.print(); 
+        cout<<"Insert pos: 9"<<endl;
+        l.insert('Z',9);
+        l.print();
     } else {
         cout<<"Usage: a.exe string"<<endl;
     }
+
 }
